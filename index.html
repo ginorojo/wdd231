@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>W01 Assignment: Course Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="stylesheet" href="styles/coursehp.css">
+    <link rel="stylesheet" href="styles/small-coursehp.css">
+    <link rel="stylesheet" href="styles/normalize.css">
 </head>
 <body>
-    
+    <header>
+        <div class="title">
+            <img src="images/profile.jpg" alt="profile">
+            <h1>Gino Rojo Jorquera</h1>
+        </div>        
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Github profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+
+            <div class="hamburguer" id="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-title">
+        <h2> Main </h2>
+    </div>
+    <main class="container">
+
+        <div class="left-container">
+            <div class="title-bar">
+                <h3>Course work</h3>
+            </div>
+            <P>.</P>
+            <P>.</P>
+            <P>.</P>
+        </div>
+
+        <div class="right-container">
+            <div class="title-bar">
+                <h3>Chile</h3>
+            </div>
+            <div class="chile">
+            <img src="images/chile.jpg" alt="chile">
+            </div>
+        </div>
+
+    </main>
+
+    <section class="certificate">
+        <div class="title-bar">
+        <h3>Web and Computer Programming Certificate</h3>
+        </div>
+        <div class="filters">
+            <button>All</button>
+            <button>CSE</button>
+            <button>WDD</button>
+        </div>
+        <div class="courses">
+            <button class="cse">CSE 110</button>
+            <button class="wdd">WDD 130</button>
+            <button class="cse">CSE 111</button>
+            <button class="cse">CSE 210</button>
+            <button class="wdd">WDD 131</button>
+            <button class="wdd">WDD 231</button>
+        </div>
+    </section>
+
+    <script src="scripts/coursehp.js"></script>
+    <footer>
+        <p class="main">© <span id="currentyear"></span> 💻 Gino Rojo 💻 Chile</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>

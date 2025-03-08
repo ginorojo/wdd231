@@ -1,0 +1,108 @@
+
+@media(max-width: 768px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding:10px 20px;
+        gap: 10px;
+    
+    }
+    
+    .left-container{
+        width: 100%;
+        height: auto;
+        border: #12181e solid 1px;
+        border-radius: 10px;
+
+    }
+
+    .left-container p{
+        font-size:30px ;
+        font-weight: bold;
+        padding:0 5px;
+    }
+
+
+    .right-container{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border: #12181e solid 1px;
+        border-radius: 10px;
+        height:auto;
+        overflow: hidden;
+    
+    }
+    .courses {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: #12181e solid 1px;
+    }
+    .courses button {
+        background: #8b4f2f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .cse {
+        background: #d9d9d9;
+        color: black;
+    }
+    
+
+}
+
+
+
+
+@media(max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        background-color: #253f5c;
+
+    }
+    .nav-links{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color:black ;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .nav-links li{
+        margin: 15px 0;
+
+    }
+
+    .hamburguer{
+        display: flex;
+        margin: 10px 10px;
+        right: 20px;
+    }
+    .nav-links.show{
+        display: flex;
+        background-color: black;
+
+    }
+
+    .title img{
+        width: 20%;
+        height: auto;
+        padding: 1px 1px;
+        border-radius: 10px;
+    }
+    
+}
+
+    
