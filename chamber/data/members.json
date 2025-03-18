@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Codelco",
+        "address": "Huérfanos 1270, Santiago, Chile",
+        "phone": "+56 2 2690 3000",
+        "website": "https://www.codelco.com/",
+        "image": "images/codelco.webp",
+        "membership_level": 3
+    },
+    {
+        "name": "Falabella",
+        "address": "Avenida Pedro de Valdivia 550, Santiago, Chile",
+        "phone": "+56 2 2680 6000",
+        "website": "https://www.falabella.com/",
+        "image": "images/Falabella-Simbolo.webp",
+        "membership_level": 2
+    },
+    {
+        "name": "LATAM Airlines",
+        "address": "Av. Americo Vespucio 901, Santiago, Chile",
+        "phone": "+56 600 526 2000",
+        "website": "https://www.latam.com/",
+        "image": "images/Latam-Airlines-Logo-Vector.webp",
+        "membership_level": 3
+    },
+    {
+        "name": "Banco de Chile",
+        "address": "Ahumada 251, Santiago, Chile",
+        "phone": "+56 600 637 3737",
+        "website": "https://www.bancochile.cl/",
+        "image": "images/logo_bancochile.webp",
+        "membership_level": 2
+    },
+    {
+        "name": "Entel",
+        "address": "Andrés Bello 2687, Las Condes, Santiago, Chile",
+        "phone": "+56 600 360 0360",
+        "website": "https://www.entel.cl/",
+        "image": "images/logo_entel.webp",
+        "membership_level": 3
+    },
+    {
+        "name": "Ripley",
+        "address": "Rosario Norte 555, Las Condes, Santiago, Chile",
+        "phone": "+56 2 2345 6000",
+        "website": "https://www.ripley.cl/",
+        "image": "images/logo_ripley.webp",
+        "membership_level": 2
+    },
+    {
+        "name": "CCU",
+        "address": "Vitacura 2670, Las Condes, Santiago, Chile",
+        "phone": "+56 2 2428 5000",
+        "website": "https://www.ccu.cl/",
+        "image": "images/logo-ccu.webp",
+        "membership_level": 3
+    }
+] 
