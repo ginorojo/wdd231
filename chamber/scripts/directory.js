@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   
     if (!toggleViewButton || !membersContainer) {
-        console.error("No se encontraron los elementos necesarios en el DOM.");
         return;
     }
 
