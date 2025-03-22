@@ -29,7 +29,7 @@
         "phone": "+56 600 637 3737",
         "website": "https://www.bancochile.cl/",
         "image": "images/logo_bancochile.webp",
-        "membership_level": 2
+        "membership_level": 1
     },
     {
         "name": "Entel",
@@ -37,7 +37,7 @@
         "phone": "+56 600 360 0360",
         "website": "https://www.entel.cl/",
         "image": "images/logo_entel.webp",
-        "membership_level": 3
+        "membership_level": 1
     },
     {
         "name": "Ripley",

@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: white;
+    font-family: 'Lato',sans-serif;
+    background-color:#f8f9f9;
     padding: 5px;
 }
 
@@ -14,8 +14,9 @@ body {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    padding: 20px 40px;
-    background-color: #dadada;
+    padding: 20px 60px;
+    background-color: #515050;
+    box-shadow:10px 10px 50px rgba(0, 0, 0, 0.8);
 }
 
 .main-content {
@@ -23,15 +24,16 @@ body {
 }
 
 .logo img {
-    max-width: 100px;
+    max-width: 80px;
 }
 
 .title {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
     flex: 1;
     text-align: start;
     margin: 10px;
+    color:#ecf0f1  ;
 }
 
 .nav {
@@ -41,7 +43,7 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: #333;
+    color:#ecf0f1 ;
     font-weight: bold;
     display: inline;
     padding: 0;
@@ -106,7 +108,7 @@ body {
 
 .toggle-view {
     padding: 10px 20px;
-    background-color: #6b7987;
+    background-color:#245a91;
     color: white;
     border: none;
     border-radius: 5px;
@@ -116,7 +118,7 @@ body {
 }
 
 .toggle-view:hover {
-    background-color: #bac3cc;
+    background-color:#dadada;
 }
 
 .footer-container {
@@ -124,7 +126,9 @@ body {
     flex-direction: row;
     align-items: center;
     padding: 20px 40px;
-    background-color: #dadada;
+    background-color:#515050;
+    color:#ecf0f1 ;
+    box-shadow:10px 10px 50px rgba(0, 0, 0, 0.8);
 }
 
 .footer-container h3 {
@@ -150,13 +154,108 @@ body {
     font-size: 25px;
 }
 
+.hero img{
+    width: 90%;
+    height: auto;
+    box-shadow:10px 10px 70px rgba(0, 0, 0, 0.9);
+}
+
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 30px repeat(1, 150px);
+    gap:20px;
+    padding: 20px 60px;
+    height: 300px;
+}
+
+.title-home{
+    grid-column:1/2 ;
+    grid-row: 1;
+    height: 20px;
+}
+
+.target1{
+    grid-column:1/2 ;
+    grid-row: 2;
+    border: 2px solid black;
+    height:210px;
+
+}
+.target1 h3{
+    background-color: #ccc;
+    border-bottom: 2px solid black;
+    padding:2px 5px;
+}
+
+.target2{
+    grid-column:2 ;
+    grid-row:2;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns:20px repeat(2, 50x);;
+    grid-template-rows:30px repeat(2, 12px);
+    height:210px;
+    
+}
+#weather-icon{
+    width: 80px; /* Change the width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure it's treated as a block element */
+    margin: 20px auto; /* Center horizontally */
+}
+
+.target2 h3{
+    grid-column: 1/3;
+    background-color: #ccc;
+    height: 28.6px;
+    border-bottom: 2px solid black;
+    padding:0 5px;
+    
+}
+
+.target2 p{
+    grid-column:2/3 ;
+    
+}
+.target3{
+    grid-column:3/4 ;
+    grid-row: 2;
+    border: 2px solid black;
+    height:210px;
+
+}
+.target3 h3{
+    background-color: #ccc;
+    border-bottom: 2px solid black;
+    padding:2px 5px;
+}
+
+.members-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    padding: 20px 60px;
+
+}
+.members-container .member-card {
+    border: 2px solid black;
+    padding: 20px 60px;
+}
+
 @media(max-width: 768px) {
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        background-color: #dadada;
     }
 
     .main-content {
@@ -188,7 +287,6 @@ body {
 
     .nav a {
         text-decoration: none;
-        color: #333;
         font-weight: bold;
         padding: 5px 10px;
         font-size: 9px;
@@ -242,7 +340,6 @@ body {
         flex-direction: row;
         align-items: flex-start;
         padding: 10px 20px;
-        background-color: #dadada;
     }
 
     .footer-container h3 {
@@ -274,5 +371,72 @@ body {
         display: flex;
         flex-direction: column;
         padding-left: 40px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr 1fr 1fr 1fr;
+        gap:20px;
+        padding: 20px 60px;
+        height: 720px;
+    }
+    
+    .title-home{
+        grid-column:1 ;
+        grid-row: 1;
+        height: 10px;
+    }
+    
+    .target1{
+        grid-column:1 ;
+        grid-row: 2;
+        border: 2px solid black;
+        height:200px;
+    
+    }
+    .target1 h3{
+        background-color: #ccc;
+        border-bottom: 2px solid black;
+    }
+    
+    .target2{
+        grid-column:1 ;
+        grid-row:3;
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns:20px repeat(2, 50x);;
+        grid-template-rows:30px repeat(2, 12px);
+        height:200px;
+        
+    }
+    #weather-icon{
+        width: 80px; /* Change the width */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure it's treated as a block element */
+        margin: 20px auto; /* Center horizontally */
+    }
+    
+    .target2 h3{
+        grid-column: 1/3;
+        background-color: #ccc;
+        height: 21.6px;
+        border-bottom: 2px solid black;
+        
+    }
+    
+    .target2 p{
+        grid-column:2/3 ;
+        
+    }
+    .target3{
+        grid-column:1 ;
+        grid-row: 4;
+        border: 2px solid black;
+        height:200px;
+    }
+    .target3 h3{
+        background-color: #ccc;
+        border-bottom: 2px solid black;
     }
 }

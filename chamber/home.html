@@ -25,21 +25,44 @@
             <h3>Chamber of Commerce</h3>
         </div>
         <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Directory</a>
+            <a href="https://ginorojo.github.io/wdd231/chamber/Home.html">Home</a>
+            <a href="https://ginorojo.github.io/wdd231/chamber/directory.html">Directory</a>
             <a href="#">Join</a>
             <a href="#">Discover</a>
         </nav>
     </header>
+    <div class="hero" aria-label="Image of La Serena Chamber of Commerce">
+        <img src="images/atardecer.jpg" alt="background ofice">
+    </div>
 
-    <main class="main-content">
-
-        <button class="toggle-view">Change View</button>
-
-    
-        <div class="members-container">
+    <section class="container">
+        <h2 class="title-home">Home</h2>
+        <div class="target1">
+            <h3>home</h3>
         </div>
-    </main>
+
+        <div class="target2">
+            <h3>Current Weather</h3>  
+            <img id="weather-icon" src="" alt="Weather icon">
+            <p id="current-temp">Loading...</p>
+            <p id="currentTemp"></p>
+            <p id="maxTemp"></p>
+            <p id="minTemp"></p>
+            <p id="humidity"></p>
+            <p id="sunrise"></p>
+            <p id="sunset"></p>
+            <p id="weather-desc"></p>
+        </div>
+        <div class="target3">
+            <h3>Weather Forecast</h3>
+        </div>
+
+    </section>
+
+    <div class="business">
+        <div class="members-container"></div>
+
+    </div>
 
     <script src="scripts/directory.js"></script>
     <footer class="footer-container">
@@ -62,7 +85,6 @@
             <p class="main"><span id="currentyear"></span> 💻 Gino Rojo 💻 Chile</p>
             <p id="lastModified"></p>
         </div>
-
     </footer>
 </body>
 </html>
