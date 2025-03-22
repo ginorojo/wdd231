@@ -201,7 +201,6 @@ body {
     grid-row:2;
     border: 2px solid black;
     display: grid;
-    grid-template-columns:20px repeat(2, 50x);;
     grid-template-rows:30px repeat(2, 12px);
     height:230px;
     
@@ -429,7 +428,6 @@ body {
         grid-row:3;
         border: 2px solid black;
         display: grid;
-        grid-template-columns:20px repeat(2, 50x);;
         grid-template-rows:30px repeat(2, 12px);
         height:200px;
         
