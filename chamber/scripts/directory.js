@@ -44,12 +44,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             memberCard.appendChild(memberName);
 
             const memberPhone = document.createElement('p');
-            memberPhone.textContent = `Teléfono: ${member.phone}`;
+            memberPhone.textContent = `Phone: ${member.phone}`;
             memberCard.appendChild(memberPhone);
 
             const memberWebsite = document.createElement('a');
             memberWebsite.href = member.website;
-            memberWebsite.textContent = "Visitar sitio web";
+            memberWebsite.textContent = "Web site";
             memberWebsite.target = "_blank";
             memberCard.appendChild(memberWebsite);
 
@@ -127,36 +127,129 @@ function displayWeatherData(data) {
 
 fetchWeatherData();
 
+
+// Código para mostrar el pronóstico del clima para los próximos 3 días
+const forecastContainer = document.querySelector("#forecast-container");
+
+// URL de la API de OpenWeather para el pronóstico de 5 días
+const forecastUrl =
+  "https://api.openweathermap.org/data/2.5/forecast?lat=-29.90591&lon=-71.25014&appid=a83e5861802436d8cbe35d5ec980d681&units=metric";
+
+async function fetchForecastData() {
+  try {
+    const response = await fetch(forecastUrl);
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data); // For testing
+      displayForecastData(data);
+    } else {
+      throw new Error(await response.text());
+    }
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+function displayForecastData(data) {
+  forecastContainer.innerHTML = ""; // Limpiar el contenedor antes de agregar datos
+
+  // Filtrar datos para obtener un pronóstico diario
+  const dailyForecast = [];
+  data.list.forEach((forecast) => {
+    const date = forecast.dt_txt.split(" ")[0]; // Extraer la fecha (AAAA-MM-DD)
+    if (!dailyForecast.some((item) => item.date === date)) {
+      // Agregar solo la primera entrada del día
+      dailyForecast.push({
+        date: date,
+        temp: forecast.main.temp,
+        icon: forecast.weather[0].icon,
+        description: forecast.weather[0].description,
+      });
+    }
+  });
+
+  // Mostrar solo los próximos 3 días
+  dailyForecast.slice(0, 3).forEach((day) => {
+    const dayCard = document.createElement("div");
+    dayCard.classList.add("day-card");
+
+    // Crear contenedor para las dos columnas
+    const columns = document.createElement("div");
+    columns.classList.add("columns");
+
+    // Primera columna: ícono del clima
+    const iconColumn = document.createElement("div");
+    iconColumn.classList.add("icon-column");
+
+    const iconElem = document.createElement("img");
+    iconElem.src = `https://openweathermap.org/img/w/${day.icon}.png`;
+    iconElem.alt = day.description;
+    iconColumn.appendChild(iconElem);
+
+    columns.appendChild(iconColumn);
+
+    // Segunda columna: datos del clima
+    const dataColumn = document.createElement("div");
+    dataColumn.classList.add("data-column");
+
+    // Nombre del día en inglés
+    const dayName = new Date(day.date).toLocaleDateString("en-US", { weekday: "long" });
+
+    const dateElem = document.createElement("p");
+    dateElem.textContent = dayName; // Mostrar el nombre del día
+    dataColumn.appendChild(dateElem);
+
+    // Temperatura
+    const tempElem = document.createElement("p");
+    tempElem.innerHTML = `Temp: ${day.temp.toFixed(1)}&deg;C`;
+    dataColumn.appendChild(tempElem);
+
+    // Descripción del clima
+    const descElem = document.createElement("p");
+    descElem.textContent = day.description.charAt(0).toUpperCase() + day.description.slice(1);
+    dataColumn.appendChild(descElem);
+
+    columns.appendChild(dataColumn);
+
+    // Agregar las columnas al card
+    dayCard.appendChild(columns);
+    forecastContainer.appendChild(dayCard);
+  });
+}
+
+// Llamar a la función para obtener y mostrar el pronóstico
+fetchForecastData();
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
 
-    const membersContainer = document.querySelector('.members-container');
+    const level3Container = document.querySelector('.level3-container');
 
     // Asegúrate de que el contenedor esté presente en el DOM
-    if (!membersContainer) {
-        console.error("No se encontró el contenedor de miembros.");
+    if (!level3Container) {
+        console.error("No se encontró el contenedor de miembros de nivel 3.");
         return;
     }
 
-    // Función para obtener y mostrar los miembros de nivel 1
-    async function fetchMembers() {
+    // Función para obtener y mostrar los miembros de nivel 3
+    async function fetchLevel3Members() {
         try {
-            // Cambia la URL si es necesario para cargar el archivo JSON adecuado
             const response = await fetch('data/members.json'); 
             if (!response.ok) {
                 throw new Error('La respuesta de la red no fue correcta');
             }
             const members = await response.json(); 
-            // Filtra los miembros por membership_level 1
-            const level1Members = members.filter(member => member.membership_level === 3);
-            displayMembers(level1Members); 
+            const level3Members = members.filter(member => member.membership_level === 3); // Filtrar por nivel 3
+            displayLevel3Members(level3Members); 
         } catch (error) {
-            console.error("Error al cargar los miembros:", error);
+            console.error("Error al cargar los miembros de nivel 3:", error);
         }
     }
 
-    // Función para mostrar los miembros
-    function displayMembers(members) {
-        membersContainer.innerHTML = '';  // Limpiar el contenedor antes de agregar nuevos miembros
+    // Función para mostrar los miembros de nivel 3
+    function displayLevel3Members(members) {
+        level3Container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos miembros
 
         members.forEach(member => {
             const memberCard = document.createElement('div');
@@ -165,7 +258,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Imagen del miembro
             const memberImage = document.createElement('img');
             memberImage.src = member.image; 
-            memberImage.alt = `Logo de ${member.name}`;  // Corregido el uso de plantillas literales
+            memberImage.alt = `Logo de ${member.name}`;  // Corrección en la plantilla literal
             memberCard.appendChild(memberImage);
 
             // Nombre del miembro
@@ -175,21 +268,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // Teléfono del miembro
             const memberPhone = document.createElement('p');
-            memberPhone.textContent = `Teléfono: ${member.phone}`;  // Corregido el uso de plantillas literales
+            memberPhone.textContent = `Phone: ${member.phone}`;  // Corrección en la plantilla literal
             memberCard.appendChild(memberPhone);
 
             // Enlace al sitio web del miembro
             const memberWebsite = document.createElement('a');
             memberWebsite.href = member.website;
-            memberWebsite.textContent = "Visitar sitio web";
+            memberWebsite.textContent = "Web site";
             memberWebsite.target = "_blank";
             memberCard.appendChild(memberWebsite);
 
             // Agregar la tarjeta del miembro al contenedor
-            membersContainer.appendChild(memberCard);
+            level3Container.appendChild(memberCard);
         });
     }
 
-    // Llamar a la función para cargar los miembros
-    fetchMembers();
+    // Llamar a la función para cargar los miembros de nivel 3
+    fetchLevel3Members();
 });
