@@ -17,6 +17,7 @@ body {
     padding: 20px 105px;
     background-color: #515050;
     box-shadow:10px 10px 50px rgba(0, 0, 0, 0.8);
+    position: relative;
 }
 
 .main-content {
@@ -38,22 +39,38 @@ body {
 
 .nav {
     display: flex;
-    gap: 50px;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.nav a {
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-links a{
     text-decoration: none;
-    color:#ecf0f1 ;
-    font-weight: bold;
-    display: inline;
-    padding: 0;
+    color:#ecf0f1;
+    font-size: 15px;
 }
 
-.nav a:hover {
+.nav-links a:hover {
     color: #245a91;
     background-color: transparent;
 }
+.hamburguer{
+    display:none;
+    flex-direction: column;
+    cursor: pointer;
+}
 
+.bar{
+    width: 25px;
+    height: 3px;
+    background-color: #ccc;
+    margin: 4px 0;
+    transition: 0.3s;
+}
 .members-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -141,7 +158,7 @@ body {
     line-height: 1.4;
 }
 
-.social-media {
+.social-media  {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -150,22 +167,46 @@ body {
     gap: 20px;
 }
 
-.social-media i {
-    font-size: 25px;
+.social-media img{
+    width: 30px;
+    color: #ccc;
 }
 
-.hero img{
-    width: 90%;
-    height: auto;
-    box-shadow:10px 10px 70px rgba(0, 0, 0, 0.9);
-    
-}
-
-
-.hero{
+.hero {
+    position: relative; 
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.hero img {
+    width: 100%;
+    height: auto; /* Se adapta al tamaño del contenedor */
+    padding: 0 60px;
+}
+
+.call-to-action {
+    position: absolute;
+    bottom:10%; /* Distancia desde la parte inferior */
+    right:10%; /* Distancia desde el lado derecho */
+    color: #fff;
+    font-weight: bold; /* Texto blanco */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.call-to-action .btn {
+    display: inline-block; /* Asegura que el botón sea un bloque interactivo */
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Color del texto */
+    background-color:#817f7fe6; /* Color de fondo inicial */
+    padding: 10px 60px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.3s; /* Animación suave */
+}
+
+.call-to-action .btn:hover {
+    background-color: #0056b3; /* Cambia el fondo del botón al hacer hover */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+    cursor: pointer; /* Cambia el cursor al estilo de mano */
 }
 
 .container {
@@ -174,7 +215,7 @@ body {
     grid-template-rows: 30px repeat(1, 150px);
     gap:20px;
     padding: 20px 105px;
-    height: 300px;
+    height: 360px;
 }
 
 .title-home{
@@ -187,7 +228,7 @@ body {
     grid-column:1/2 ;
     grid-row: 2;
     border: 2px solid black;
-    height:230px;
+    height:260px;
 
 }
 .target1 h3{
@@ -202,11 +243,11 @@ body {
     border: 2px solid black;
     display: grid;
     grid-template-rows:30px repeat(2, 12px);
-    height:230px;
+    height:260px;
     
 }
 #weather-icon{
-    width: 80px; /* Change the width */
+    width: 60px; /* Change the width */
     height: auto; /* Maintain aspect ratio */
     display: block; /* Ensure it's treated as a block element */
     margin: 20px auto; /* Center horizontally */
@@ -223,13 +264,22 @@ body {
 
 .target2 p{
     grid-column:2/3 ;
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 5px;
     
 }
+.target3 p{
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
 .target3{
     grid-column:3/4 ;
     grid-row: 2;
     border: 2px solid black;
-    height:230px;
+    height:260px;
 
 }
 .target3 h3{
@@ -272,6 +322,85 @@ body {
     text-align: center;
   }
   
+
+
+
+  @media (max-width: 1024px) {
+
+
+    .container {
+        display: grid;
+        grid-template-columns:1fr 1fr ;
+        grid-template-rows:0.5fr 1fr 1fr;
+        gap:20px;
+        padding: 20px 60px;
+        height: 720px;
+    }
+    
+    .title-home{
+        grid-column:1 ;
+        grid-row: 1;
+        height: 10px;
+
+    }
+    
+    .target1{
+        grid-column:1/3 ;
+        grid-row: 2;
+        border: 2px solid black;
+        height:260px;
+    
+    }
+    .target1 h3{
+        background-color: #ccc;
+        border-bottom: 2px solid black;
+    }
+    
+    .target2{
+        grid-column:1/2;
+        grid-row:3;
+        border: 2px solid black;
+        display: grid;
+        grid-template-rows:30px repeat(2, 12px);
+        height:260px;
+        
+
+    }
+
+    #weather-icon{
+        width: 30px; /* Change the width */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Ensure it's treated as a block element */
+        margin: 20px auto; /* Center horizontally */
+    }
+    .target2 h3{
+        grid-column: 1/3;
+        background-color: #ccc;
+        height: 28px;
+        border-bottom: 2px solid black;
+        
+    }
+    
+    .target2 p{
+        grid-column:2/3 ;
+        
+    }
+    .target3{
+        grid-column:2/3 ;
+        grid-row: 3;
+        border: 2px solid black;
+        height:260px;
+    }
+    .target3 h3{
+        background-color: #ccc;
+        border-bottom: 2px solid black;
+    }
+    .target3 p{
+        padding-top: 8px;
+    }
+}
+
+
 
 @media(max-width: 768px) {
     .header {
@@ -402,7 +531,7 @@ body {
         grid-template-rows:1fr 1fr 1fr 1fr;
         gap:20px;
         padding: 20px 60px;
-        height: 720px;
+        height: 900px;
     }
     
     .title-home{
@@ -415,7 +544,7 @@ body {
         grid-column:1 ;
         grid-row: 2;
         border: 2px solid black;
-        height:200px;
+        height:260px;
     
     }
     .target1 h3{
@@ -429,8 +558,9 @@ body {
         border: 2px solid black;
         display: grid;
         grid-template-rows:30px repeat(2, 12px);
-        height:200px;
+        height:260px;
         
+
     }
     #weather-icon{
         width: 80px; /* Change the width */
@@ -455,7 +585,7 @@ body {
         grid-column:1 ;
         grid-row: 4;
         border: 2px solid black;
-        height:200px;
+        height:260px;
     }
     .target3 h3{
         background-color: #ccc;
@@ -470,8 +600,9 @@ body {
         justify-items: center;
         gap: 20px;
        
-    
     }
+    
+
     .level3-container .member-card {
         border: 2px solid black;
         padding:20px  6px;
@@ -480,3 +611,58 @@ body {
     }
     
 }
+
+@media (max-width: 768px){
+    nav{
+        justify-content: space-between;
+    }
+    .nav-links{
+        display: none;
+        position:absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links li{
+        margin: 15px 0;
+
+    }
+    .hamburguer{
+        display: flex;
+    }
+    .nav-links.show{
+        z-index: 10;
+        display: flex;
+        background-color:  #515050;;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .call-to-action {
+        bottom: 10%; /* Ajuste de posición en pantallas más pequeñas */
+        right: 15%;
+        padding: 8px 20px; /* Reduce el padding */
+    }
+
+    .call-to-action .btn {
+        font-size: 0.9em; /* Tamaño de texto menor */
+        padding: 8px 20px; /* Ajuste en el tamaño del botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .call-to-action {
+        bottom: 10%; /* Más cercano al borde en pantallas muy pequeñas */
+        right: 20%;
+    }
+
+    .call-to-action .btn {
+        font-size: 0.8em; /* Tamaño aún más reducido */
+        padding: 3px 8px; /* Botón más compacto */
+    }
+}
+
+

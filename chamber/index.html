@@ -6,14 +6,12 @@
     <title>La Serena Chamber of Commerce</title>
     <meta name="description" content="La Serena Chamber of Commerce">
     <meta name="author" content="Gino Rojo">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';">
     <meta property="og:title" content="La Serena Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ginorojo.github.io/wdd231/chamber/directory.html">
     <meta property="og:image" content="https://www.playasdechile.com/wp-content/uploads/2024/01/playa-el-faro-1024x607.jpg">
     <link rel="icon" href="images/images.jpg">
     <link rel="stylesheet" href="styles/directory.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
 </head>
@@ -26,16 +24,27 @@
             <h1>La Serena</h1>
             <h3>Chamber of Commerce</h3>
         </div>
-        <nav class="nav">
-            <a href="https://ginorojo.github.io/wdd231/chamber/">Home</a>
-            <a href="https://ginorojo.github.io/wdd231/chamber/directory">Directory</a>
-            <a href="#">Join</a>
-            <a href="#">Discover</a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+            <li><a href="https://ginorojo.github.io/wdd231/chamber/">Home</a></li>
+            <li><a href="https://ginorojo.github.io/wdd231/chamber/directory">Directory</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Discover</a></li>
+            </ul>
+            <div class="hamburguer" id="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
     <div class="hero" role="img" aria-label="Image of La Serena Chamber of Commerce">
         <img src="images/atardecer.jpg" alt="background ofice">
+        <div class="call-to-action">
+            <a href="#Join" class="btn">Join Us</a>
+        </div>
     </div>
+    
 
     <section class="container">
         <h2 class="title-home">Home</h2>
@@ -77,9 +86,9 @@
             <p>+569123456</p>
         </div>
         <div class="social-media">
-            <i class="fa-brands fa-youtube"></i>
-            <i class="fa-brands fa-x-twitter"></i>
-            <i class="fa-brands fa-linkedin"></i>
+            <img src="images/x-twitter-brands.svg" alt="twiter-icon">
+            <img src="images/youtube-brands.svg" alt="gmail-icon">
+            
         </div>
         
         <div class="name-proyect">

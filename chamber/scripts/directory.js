@@ -1,3 +1,11 @@
+const hamburguesa = document.querySelector('#hamburguer')
+const links = document.querySelector('#nav-links')
+
+hamburguesa.addEventListener ('click' , () => {
+  links.classList.toggle('show')
+
+})
+
 document.addEventListener("DOMContentLoaded", async () => {
 
 
@@ -99,7 +107,7 @@ async function fetchWeatherData() {
 
 function displayWeatherData(data) {
   // Current temperature
-  currentTemp.innerHTML = `Temperature: ${data.main.temp.toFixed(1)}&deg;C`;
+  currentTemp.innerHTML = `Temp: ${data.main.temp.toFixed(1)}&deg;C`;
 
   // Maximum and minimum temperature
   maxTemp.innerHTML = `Max: ${data.main.temp_max.toFixed(1)}&deg;C`;
