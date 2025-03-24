@@ -323,9 +323,19 @@ body {
   }
   
 
+@media (max-width: 1024px) {
 
 
-  @media (max-width: 1024px) {
+    .hero {
+        position: relative; 
+        display: flex;
+    }
+    
+    .hero img {
+        width: 100%;
+        height: auto; /* Se adapta al tamaño del contenedor */
+        padding: 0 0px;
+    }
 
 
     .container {
