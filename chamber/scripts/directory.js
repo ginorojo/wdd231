@@ -230,66 +230,80 @@ fetchForecastData();
 
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const level3Container = document.querySelector('.level3-container');
 
-    const level3Container = document.querySelector('.level3-container');
+  // Asegúrate de que el contenedor esté presente en el DOM
+  if (!level3Container) {
+      console.error("No se encontró el contenedor de miembros de nivel 3.");
+      return;
+  }
 
-    // Asegúrate de que el contenedor esté presente en el DOM
-    if (!level3Container) {
-        console.error("No se encontró el contenedor de miembros de nivel 3.");
-        return;
-    }
+  // Función para obtener y mostrar los miembros de nivel 3
+  async function fetchLevel3Members() {
+      try {
+          const response = await fetch('data/members.json'); 
+          if (!response.ok) {
+              throw new Error('La respuesta de la red no fue correcta');
+          }
+          const members = await response.json(); 
+          const level3Members = members.filter(member => member.membership_level === 3); // Filtrar por nivel 3
+          
+          // Barajar la lista de miembros
+          const shuffledMembers = shuffleArray(level3Members);
+          
+          // Mostrar las tarjetas con el orden barajado
+          displayLevel3Members(shuffledMembers); 
+      } catch (error) {
+          console.error("Error al cargar los miembros de nivel 3:", error);
+      }
+  }
 
-    // Función para obtener y mostrar los miembros de nivel 3
-    async function fetchLevel3Members() {
-        try {
-            const response = await fetch('data/members.json'); 
-            if (!response.ok) {
-                throw new Error('La respuesta de la red no fue correcta');
-            }
-            const members = await response.json(); 
-            const level3Members = members.filter(member => member.membership_level === 3); // Filtrar por nivel 3
-            displayLevel3Members(level3Members); 
-        } catch (error) {
-            console.error("Error al cargar los miembros de nivel 3:", error);
-        }
-    }
+  // Función para mostrar los miembros de nivel 3
+  function displayLevel3Members(members) {
+      level3Container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos miembros
 
-    // Función para mostrar los miembros de nivel 3
-    function displayLevel3Members(members) {
-        level3Container.innerHTML = ''; // Limpiar el contenedor antes de agregar nuevos miembros
+      members.forEach(member => {
+          const memberCard = document.createElement('div');
+          memberCard.classList.add('member-card');
 
-        members.forEach(member => {
-            const memberCard = document.createElement('div');
-            memberCard.classList.add('member-card');
+          // Imagen del miembro
+          const memberImage = document.createElement('img');
+          memberImage.src = member.image; 
+          memberImage.alt = `Logo de ${member.name}`;
+          memberCard.appendChild(memberImage);
 
-            // Imagen del miembro
-            const memberImage = document.createElement('img');
-            memberImage.src = member.image; 
-            memberImage.alt = `Logo de ${member.name}`;  // Corrección en la plantilla literal
-            memberCard.appendChild(memberImage);
+          // Nombre del miembro
+          const memberName = document.createElement('h3');
+          memberName.textContent = member.name;
+          memberCard.appendChild(memberName);
 
-            // Nombre del miembro
-            const memberName = document.createElement('h3');
-            memberName.textContent = member.name;
-            memberCard.appendChild(memberName);
+          // Teléfono del miembro
+          const memberPhone = document.createElement('p');
+          memberPhone.textContent = `Phone: ${member.phone}`;
+          memberCard.appendChild(memberPhone);
 
-            // Teléfono del miembro
-            const memberPhone = document.createElement('p');
-            memberPhone.textContent = `Phone: ${member.phone}`;  // Corrección en la plantilla literal
-            memberCard.appendChild(memberPhone);
+          // Enlace al sitio web del miembro
+          const memberWebsite = document.createElement('a');
+          memberWebsite.href = member.website;
+          memberWebsite.textContent = "Web site";
+          memberWebsite.target = "_blank";
+          memberCard.appendChild(memberWebsite);
 
-            // Enlace al sitio web del miembro
-            const memberWebsite = document.createElement('a');
-            memberWebsite.href = member.website;
-            memberWebsite.textContent = "Web site";
-            memberWebsite.target = "_blank";
-            memberCard.appendChild(memberWebsite);
+          // Agregar la tarjeta del miembro al contenedor
+          level3Container.appendChild(memberCard);
+      });
+  }
 
-            // Agregar la tarjeta del miembro al contenedor
-            level3Container.appendChild(memberCard);
-        });
-    }
+  // Función para barajar un array (Fisher-Yates Shuffle)
+  function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+  }
 
-    // Llamar a la función para cargar los miembros de nivel 3
-    fetchLevel3Members();
+  // Llamar a la función para cargar los miembros de nivel 3
+  fetchLevel3Members();
 });
+
