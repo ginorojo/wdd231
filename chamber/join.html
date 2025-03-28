@@ -60,6 +60,7 @@
                 <label>Business/Organization's Name <input type="text" name="organizationName" required autocomplete="organization" title="Please enter the name of the business or organization."></label>
                 <label for="org-description">Business/Organization's Description:</label>
                 <textarea id="org-description" name="organizationDescription" title="Provide a detailed description of the business or organization" required></textarea>
+                <div class="membership-container">
                 <h3>Membership Level</h3>
                 <label><input type="radio" name="membership" value="Non profit membership Level" checked> Non profit membership Level</label>
                 <label><input type="radio" name="membership" value="Bronce membership"> Bronce membership</label>
@@ -67,7 +68,7 @@
                 <label><input type="radio" name="membership" value="Gold membership"> Gold membership</label>
                 <input type="hidden" name="timestamp" id="timestamp" value="<?php echo date('Y-m-d\TH:i:s'); ?>">
                 <input type="submit" value="Submit Form">
-                
+                </div>
                   
               </form>
             </section>
