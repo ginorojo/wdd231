@@ -357,6 +357,14 @@
         justify-content:center;
         align-items: center;
     }
+    .membership-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        gap: 30px;
+    
+    }
     
 
 
@@ -393,6 +401,14 @@
     }
     .container{
         padding: 20px 20px;
+    }
+    .membership-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        gap: 30px;
+    
     }
 
 
