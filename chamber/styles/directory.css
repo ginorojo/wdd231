@@ -46,7 +46,7 @@ body {
 .nav-links{
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 .nav-links a{
     text-decoration: none;
@@ -321,358 +321,223 @@ body {
     padding-left: 10px;
     text-align: center;
   }
-  
 
-@media (max-width: 1024px) {
+.container-form-cards h2{
+    display: flex;
+    justify-content: center;
+}
 
-
-    .hero {
-        position: relative; 
-        display: flex;
-    }
-    
-    .hero img {
-        width: 100%;
-        height: auto; /* Se adapta al tamaño del contenedor */
-        padding: 0 0px;
-    }
+.container-form-cards{
+    display: flex;
+    padding:50px 105px ;
+    justify-content: space-around;
+}
 
 
-    .container {
-        display: grid;
-        grid-template-columns:1fr 1fr ;
-        grid-template-rows:0.5fr 1fr 1fr;
-        gap:20px;
-        padding: 20px 60px;
-        height: 720px;
-    }
-    
-    .title-home{
-        grid-column:1 ;
-        grid-row: 1;
-        height: 10px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
 
-    }
-    
-    .target1{
-        grid-column:1/3 ;
-        grid-row: 2;
-        border: 2px solid black;
-        height:260px;
-    
-    }
-    .target1 h3{
-        background-color: #ccc;
-        border-bottom: 2px solid black;
-    }
-    
-    .target2{
-        grid-column:1/2;
-        grid-row:3;
-        border: 2px solid black;
-        display: grid;
-        grid-template-rows:30px repeat(2, 12px);
-        height:260px;
-        
+form label {
+    font-size: 15px; /* 0.8rem = 12.8px */
+    color: black;
+    padding-top: 5px; /* 0.2rem = 3.2px */
+}
 
-    }
+form h3 {
+    font-size: 18px; /* 0.9rem = 14.4px */
+    color: black;
+    margin: 24px 0 3.2px 0; /* 1.5rem = 24px, 0.2rem = 3.2px */
+    border-bottom: 1px solid #eee;
+}
 
-    #weather-icon{
-        width: 30px; /* Change the width */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Ensure it's treated as a block element */
-        margin: 20px auto; /* Center horizontally */
-    }
-    .target2 h3{
-        grid-column: 1/3;
-        background-color: #ccc;
-        height: 28px;
-        border-bottom: 2px solid black;
-        
-    }
-    
-    .target2 p{
-        grid-column:2/3 ;
-        
-    }
-    .target3{
-        grid-column:2/3 ;
-        grid-row: 3;
-        border: 2px solid black;
-        height:260px;
-    }
-    .target3 h3{
-        background-color: #ccc;
-        border-bottom: 2px solid black;
-    }
-    .target3 p{
-        padding-top: 8px;
-    }
+form input[type=text],
+form input[type=tel],
+form input[type=date],
+form input[type=email],
+form select {
+    display: block;
+    margin: 1.6px 0 16px 0; /* 0.1rem = 1.6px, 1rem = 16px */
+    padding: 4.8px; /* 0.3rem = 4.8px */
+    border: 1px solid #999;
+    border-radius: 4px;
+    border-left-width: 5px;
+    border-left-color: #555;
+    font-size: 16px; /* 1rem = 16px */
+    color: #3D405B;
+    width: 250px;
+}
+
+form input[type=submit] {
+    border: none;
+    text-align: center;
+    background-color: #3D405B;
+    color: white;
+    border-radius: 20px; /* 1rem = 16px */
+    padding: 8px 3px; /* 0.75rem = 12px, 1.5rem = 24px */
+    margin: 10px 0; /* 2rem = 32px */
+    font-size: 15px; /* 1.2rem = 19.2px */
+    width: 150px;
+}
+
+form input[type=submit]:hover {
+    background-color: #3d405b92;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+form textarea {
+    width: 250px; /* Ancho del textarea */
+    height: 150px; /* Altura del textarea (opcional) */
+    font-size: 16px; /* Tamaño del texto */
+    padding: 8px; /* Espaciado interno */
+    resize: none; /* Evita que el usuario cambie el tamaño si no lo deseas */
+    border-left-width: 5px;
+    border-left-color: #555;
+}
+
+
+.membership{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.membership h2{
+   padding-bottom: 20px;
 }
 
 
 
-@media(max-width: 768px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-    }
-
-    .main-content {
-        padding: 0px 40px;
-    }
-
-    .logo img {
-        max-width: 50px;
-    }
-
-    h1 {
-        font-size: 10px;
-    }
-
-    h3 {
-        font-size: 8px;
-    }
-
-    .title {
-        flex: 1;
-        text-align: start;
-        margin: 10px;
-    }
-
-    .nav {
-        display: flex;
-        gap: 1px;
-    }
-
-    .nav a {
-        text-decoration: none;
-        font-weight: bold;
-        padding: 5px 10px;
-        font-size: 9px;
-    }
-
-    .members-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin-top: 20px;
-        justify-items: center;
-        place-items: center;
-    }
-
-    .members-container.single-column {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .member-card {
-        width: 140px;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        align-items: center;
-        text-align: center;
-        justify-content: end;
-    }
-
-    .member-card img {
-        max-width: 50%;
-        height: auto;
-        border-radius: 8px;
-    }
-
-    .member-card h3 {
-        text-align: center;
-        justify-content: end;
-        margin-top: 20px;
-        font-size: 15px;
-    }
-
-    .member-card p a {
-        font-size: 5px;
-    }
-
-    .footer-container {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 10px 20px;
-    }
-
-    .footer-container h3 {
-        font-size: 12px;
-        flex: 1;
-        padding-bottom: 8px;
-    }
-
-    .footer-container p {
-        font-size: 10px;
-        line-height: 20px;
-        line-height: 1.3;
-    }
-
-    .social-media {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex: 1;
-        justify-content: center;
-        gap: 5px;
-    }
-
-    .social-media i {
-        font-size: 20px;
-    }
-
-    .name-proyect {
-        display: flex;
-        flex-direction: column;
-        padding-left: 40px;
-    }
-
-    .container {
-        display: grid;
-        grid-template-columns:1fr;
-        grid-template-rows:1fr 1fr 1fr 1fr;
-        gap:20px;
-        padding: 20px 60px;
-        height: 900px;
+.np-membership,
+.bronze-membership,
+.silver-membership,
+.gold-membership {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#515050;
+    color:white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8); /* Más pequeño al inicio */
+        }
+        to {
+            opacity: 1;
+            transform: scale();   /* Tamaño normal al final */
+        }
     }
     
-    .title-home{
-        grid-column:1 ;
-        grid-row: 1;
-        height: 10px;
-    }
-    
-    .target1{
-        grid-column:1 ;
-        grid-row: 2;
-        border: 2px solid black;
-        height:260px;
-    
-    }
-    .target1 h3{
-        background-color: #ccc;
-        border-bottom: 2px solid black;
-    }
-    
-    .target2{
-        grid-column:1 ;
-        grid-row:3;
-        border: 2px solid black;
-        display: grid;
-        grid-template-rows:30px repeat(2, 12px);
-        height:260px;
-        
+.np-membership button,
+.bronze-membership button,
+.silver-membership button,
+.gold-membership button {
 
-    }
-    #weather-icon{
-        width: 80px; /* Change the width */
-        height: auto; /* Maintain aspect ratio */
-        display: block; /* Ensure it's treated as a block element */
-        margin: 20px auto; /* Center horizontally */
-    }
-    
-    .target2 h3{
-        grid-column: 1/3;
-        background-color: #ccc;
-        height: 21.6px;
-        border-bottom: 2px solid black;
-        
-    }
-    
-    .target2 p{
-        grid-column:2/3 ;
-        
-    }
-    .target3{
-        grid-column:1 ;
-        grid-row: 4;
-        border: 2px solid black;
-        height:260px;
-    }
-    .target3 h3{
-        background-color: #ccc;
-        border-bottom: 2px solid black;
-    }
-    .level3-container{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        align-items: center;
-        padding: 20px 105px;
-        justify-items: center;
-        gap: 20px;
-       
-    }
-    
-
-    .level3-container .member-card {
-        border: 2px solid black;
-        padding:20px  6px;
-        width: 300px;
-        height: 300px;
-    }
-    
+   width: 50px;
+   height: 25px;
+   margin: 15px 10px;
+   background-color: #0056b3;
+   border-radius: 15px;
+   width: 90px;
+   color: white;
+   font-weight: bold;
+   border: 1px solid rgba(0, 0, 0, 0.603);
+   cursor: pointer;
 }
 
-@media (max-width: 768px){
-    nav{
-        justify-content: space-between;
-    }
-    .nav-links{
-        display: none;
-        position:absolute;
-        top: 100%;
-        right: 0;
-        width: 100%;
-        flex-direction: column;
-        text-align: center;
-    }
-    .nav-links li{
-        margin: 15px 0;
-
-    }
-    .hamburguer{
-        display: flex;
-    }
-    .nav-links.show{
-        z-index: 10;
-        display: flex;
-        background-color:  #515050;;
-    }
-
+.np-membership button:hover,
+.bronze-membership button:hover,
+.silver-membership button:hover,
+.gold-membership button:hover {
+    background-color:#E07A5F; /* Semi-transparent blue */
 }
 
-@media (max-width: 768px) {
-    .call-to-action {
-        bottom: 10%; /* Ajuste de posición en pantallas más pequeñas */
-        right: 15%;
-        padding: 8px 20px; /* Reduce el padding */
-    }
 
-    .call-to-action .btn {
-        font-size: 0.9em; /* Tamaño de texto menor */
-        padding: 8px 20px; /* Ajuste en el tamaño del botón */
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 20px;
+    z-index: 1000;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente detrás del cuadro */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8); /* Más pequeño al inicio */
+    }
+    to {
+        opacity: 1;
+        transform: scale();   /* Tamaño normal al final */
     }
 }
 
-@media (max-width: 480px) {
-    .call-to-action {
-        bottom: 10%; /* Más cercano al borde en pantallas muy pequeñas */
-        right: 20%;
-    }
 
-    .call-to-action .btn {
-        font-size: 0.8em; /* Tamaño aún más reducido */
-        padding: 3px 8px; /* Botón más compacto */
-    }
+.close-dialog {
+    background-color:#00509e;
+    border-radius: 10px;
+    width: 60px;
+    height: 25px;
+    color:white ;
+    font-weight: bold;
+    cursor: pointer;
 }
+
+.close-dialog:hover{
+    background-color: #004f9eb3;
+}
+
+
+
+.hidden {
+    display: none; /* Asegura que el diálogo no sea visible inicialmente */
+}
+
+dialog h2 {
+    font-size: 24px;
+    color: #00509e;
+    text-align: center;
+}
+
+dialog h3 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+dialog p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.hidden {
+    display: none;
+}
+
 
 

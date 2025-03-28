@@ -80,9 +80,17 @@ const courses = [
 
 // Seleccionar elementos clave del DOM
 const coursesContainer = document.querySelector('.courses');
-const creditsContainer = document.createElement('div'); // Contenedor para los créditos
-creditsContainer.className = 'credits';
-document.querySelector('.filters').after(creditsContainer);
+const creditsContainer = document.querySelector('.credits p');
+const dialog = document.querySelector('#course-dialog'); // Nuevo: Cuadro de diálogo añadido en el HTML
+const dialogContent = {
+    courseName: document.querySelector('#dialog-course-name'),
+    courseTitle: document.querySelector('#dialog-course-title'),
+    courseCredits: document.querySelector('#dialog-course-credits'),
+    courseCertificate: document.querySelector('#dialog-course-certificate'),
+    courseDescription: document.querySelector('#dialog-course-description'),
+    courseTechnologies: document.querySelector('#dialog-course-technologies'),
+};
+const closeButton = dialog.querySelector('.close-dialog'); // Nuevo: Seleccionar el botón para cerrar el cuadro de diálogo
 
 // Función para filtrar cursos según el filtro seleccionado
 function filterCourses(filter) {
@@ -94,37 +102,50 @@ function filterCourses(filter) {
 // Función para renderizar las tarjetas de los cursos
 function renderCourses(filteredCourses) {
     coursesContainer.innerHTML = ''; // Limpiar las tarjetas existentes
-
     let totalCredits = 0;
 
     filteredCourses.forEach(course => {
-        // Crear tarjeta para el curso
-        const courseCard = document.createElement('div');
+        const courseCard = document.createElement('button'); // Nuevo: Cambiar las tarjetas a botones interactivos
         courseCard.className = 'course-card';
-        courseCard.style.backgroundColor = course.completed ? '#d4edda' : '#f8d7da'; // Colores según completado
+        courseCard.style.backgroundColor = course.completed ? '#0ba948' : '#a92f0b'; // Colores según el estado completado
+        courseCard.setAttribute('type', 'button'); // Nuevo: Asegurar que el elemento sea un botón
 
-        // Contenido de la tarjeta
         courseCard.innerHTML = `
             <h4>${course.subject} ${course.number}</h4>
-            <p>${course.title}</p>
-            <p>Credits: ${course.credits}</p>
         `;
 
-        // Añadir la tarjeta al contenedor
-        coursesContainer.appendChild(courseCard);
+        courseCard.addEventListener('click', () => showDialog(course)); // Nuevo: Evento para mostrar el cuadro de diálogo
 
-        // Sumar créditos del curso
+        coursesContainer.appendChild(courseCard);
         totalCredits += course.credits;
     });
 
-    // Actualizar y mostrar créditos totales
     creditsContainer.textContent = `Total Credits: ${totalCredits}`;
 }
+
+// Nuevo: Función para mostrar el cuadro de diálogo con la información del curso
+function showDialog(course) {
+    dialogContent.courseName.textContent = `${course.subject}${course.number}`;
+    dialogContent.courseTitle.textContent = course.title;
+    dialogContent.courseCredits.textContent = `Credits: ${course.credits}`;
+    dialogContent.courseCertificate.textContent = `Certificate: ${course.certificate}`;
+    dialogContent.courseDescription.textContent = `Description: ${course.description}`;
+    dialogContent.courseTechnologies.textContent = `Technologies: ${course.technology.join(', ')}`;
+
+    dialog.classList.remove('hidden'); // Mostrar el cuadro de diálogo
+    dialog.showModal(); // Activar el cuadro de diálogo
+}
+
+// Nuevo: Evento para cerrar el cuadro de diálogo
+closeButton.addEventListener('click', () => {
+    dialog.classList.add('hidden'); // Ocultar el cuadro de diálogo
+    dialog.close(); // Cerrar el cuadro de diálogo
+});
 
 // Asignar eventos a los botones de filtro
 document.querySelectorAll('.filters button').forEach(button => {
     button.addEventListener('click', () => {
-        const filter = button.textContent.trim().toLowerCase(); // Filtro según texto del botón
+        const filter = button.textContent.trim().toLowerCase();
         const filteredCourses = filterCourses(filter);
         renderCourses(filteredCourses);
     });
@@ -132,7 +153,6 @@ document.querySelectorAll('.filters button').forEach(button => {
 
 // Renderizar todos los cursos al cargar la página
 renderCourses(courses);
-
 
 
 const hamburguer = document.querySelector('#hamburguer');
