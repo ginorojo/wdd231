@@ -93,3 +93,29 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("currentyear").textContent = currentYear;
     document.getElementById("lastModified").textContent = "Last Modified: " + lastModified;
 });
+
+const formData = new URLSearchParams(window.location.search);
+    
+    // Obtener los datos de los parámetros
+    const firstName = formData.get('first') || 'No especificado';
+    const lastName = formData.get('last') || 'No especificado';
+    const title = formData.get('title') || 'No especificado';
+    const email = formData.get('email') || 'No especificado';
+    const phone = formData.get('phone') || 'No especificado';
+    const organizationName = formData.get('organizationName') || 'No especificado';
+    const organizationDescription = formData.get('organizationDescription') || 'No especificado';
+    const membership = formData.get('membership') || 'No especificado';
+    const timestamp = formData.get('timestamp') || 'No especificado';
+
+    // Insertar los datos en el contenedor con id="results"
+document.querySelector('#results').innerHTML = `
+        <p>Nombre: ${firstName} ${lastName}</p>
+        <p>Título Organizacional: ${title}</p>
+        <p>Correo: ${email}</p>
+        <p>Teléfono: ${phone}</p>
+        <p>Nombre de la Organización: ${organizationName}</p>
+        <p>Descripción de la Organización: ${organizationDescription}</p>
+        <p>Nivel de Membresía Seleccionado: ${membership}</p>
+        <p>Fecha y Hora de Envío: ${timestamp}</p>
+    `;
+
