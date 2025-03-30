@@ -403,7 +403,6 @@ form textarea {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     gap: 30px;
 
 }
