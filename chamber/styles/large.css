@@ -1,0 +1,12 @@
+@media only screen and (min-width: 64rem){
+#allplaces{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#allplaces div img{
+    max-width: 304px;
+    min-height: 203px;
+}
+
+}
