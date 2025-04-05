@@ -49,3 +49,39 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("currentyear").textContent = currentYear;
     document.getElementById("lastModified").textContent = "Last Modified: " + lastModified;
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const lastVisit = localStorage.getItem("lastVisit");
+    const currentTime = Date.now();
+    const messageElement = document.getElementById("visit-message");
+    const popup = document.getElementById("message-popup");
+    const closeButton = document.getElementById("close-popup");
+
+    if (!messageElement || !popup) {
+        console.error("Required elements not found.");
+        return;
+    }
+
+    if (!lastVisit) {
+        messageElement.textContent = "Welcome! If you have any questions, let us know.";
+    } else {
+        const timeDiff = currentTime - parseInt(lastVisit, 10);
+        const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+        if (daysPassed < 1) {
+            messageElement.textContent = "Back so soon? Awesome!";
+        } else if (daysPassed === 1) {
+            messageElement.textContent = "Your last visit was 1 day ago.";
+        } else {
+            messageElement.textContent = `Your last visit was ${daysPassed} days ago.`;
+        }
+    }
+
+    localStorage.setItem("lastVisit", currentTime);
+
+    popup.classList.add("show");
+
+    closeButton.addEventListener("click", () => {
+        popup.classList.remove("show");
+    });
+});

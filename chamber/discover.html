@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="styles/directory.css">
         <link rel="stylesheet" href="./styles/small.css">
         <link rel="stylesheet" href="./styles/medium.css">
-        <link rel="stylesheet" href="./styles/large.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
         
     </head>
@@ -42,12 +41,23 @@
         </nav>
     </header>
     <main>
+        <div id="message-popup" class="popup">
+            <div class="popup-content">
+                <span id="close-popup" class="close">&times;</span>
+                <p id="visit-message"></p>
+            </div>
+        </div>
+        
         <div id="allplaces">
 
         </div>
-    </main>
 
-    <script src="scripts/discover.js" type="module"></script>
+        
+    </main>
+    
+
+
+    <script src="scripts/discover.js" type="module" defer></script>
     <footer class="footer-container">
         <div class="direction">
             <h3>La Serena Chamber of Commerce</h3>
