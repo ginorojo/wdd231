@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gino Rojo's Portfolio</title>
-    <link rel="stylesheet" href="./styles/style.css" />
+    <meta name="description" content="Gino Rojo's Portfolio">
+    <meta name="author" content="Gino Rojo">
+    <link rel="stylesheet" href="./styles/style.css" >
+    <meta property="og:title" content="Gino Rojo portfolio website">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://ginorojo.github.io/wdd231/chamber/directory.html">
+        <meta property="og:image" content="./images/Captura.webp">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
     <link
       href="https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
-    />
+    >
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+
+    
   </head>
 
   <body>
@@ -28,15 +37,15 @@
         </div>
         <nav id="nav">
           <ul>
-            <li><a href="#home">#Home</a></li>
-            <li><a href="#aboutme">#About me</a></li>
-            <li><a href="#skills">#Skills</a></li>
-            <li><a href="#resume">#Resume</a></li>
-            <li><a href="#portfolio">#portfolio</a></li>
-            <li><a href="#contact">#Contact</a></li>
+            <li><a href="#home" onclick="select()" >#Home</a></li>
+            <li><a href="#aboutme " onclick="select()" >#About me</a></li>
+            <li><a href="#skills" onclick="select()">#Skills</a></li>
+            <li><a href="#resume" onclick="select()">#Resume</a></li>
+            <li><a href="#portfolio" onclick="select()">#portfolio</a></li>
+            <li><a href="#contact" onclick="select()">#Contact</a></li>
           </ul>
         </nav>
-        <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+        <div class="nav-responsive" onclick="showHideMenu()">
           <i class="fa-solid fa-bars"></i>
         </div>
       </header>
@@ -45,7 +54,7 @@
     <section id="home" class="home">
       <div class="content-banner">
         <div class="container-img">
-          <img src="./images/redonda.webp" alt="perfil" width="80%" />
+          <img src="./images/redonda.webp" alt="perfil" >
         </div>
         <h1>Gino Rojo</h1>
         <h2>Frontend Development</h2>
@@ -54,7 +63,7 @@
           <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-      </div>
+      </div>   
     </section>
     <section class="about-me" id="aboutme">
       <div class="content-section">
@@ -127,26 +136,18 @@
                       </div>
                   </div>
                   <div class="skill">
-                      <span>Photoshop</span>
+                      <span>Python</span>
                       <div class="bar-skill">
                           <div class="progres">
-                              <span>95%</span>
+                              <span>80%</span>
                           </div>
                       </div>
                   </div>
                   <div class="skill">
-                      <span>Wordpress</span>
+                      <span>Tailwind</span>
                       <div class="bar-skill">
                           <div class="progres">
-                              <span>81%</span>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="skill">
-                      <span>Drupa</span>
-                      <div class="bar-skill">
-                          <div class="progres">
-                              <span>55%</span>
+                              <span>70%</span>
                           </div>
                       </div>
                   </div>
@@ -155,7 +156,7 @@
               <div class="col">
                   <h3>Professional Skills</h3>
                   <div class="skill">
-                      <span>Comunicación</span>
+                      <span>Comunication</span>
                       <div class="bar-skill">
                           <div class="progres">
                               <span>80%</span>
@@ -163,7 +164,7 @@
                       </div>
                   </div>
                   <div class="skill">
-                      <span>Trabajo en Equipo</span>
+                      <span>Team work</span>
                       <div class="bar-skill">
                           <div class="progres">
                               <span>70%</span>
@@ -171,7 +172,7 @@
                       </div>
                   </div>
                   <div class="skill">
-                      <span>Creatividad</span>
+                      <span>Creativity</span>
                       <div class="bar-skill">
                           <div class="progres">
                               <span>99%</span>
@@ -179,18 +180,10 @@
                       </div>
                   </div>
                   <div class="skill">
-                      <span>Dedicación</span>
+                      <span>Dedication</span>
                       <div class="bar-skill">
                           <div class="progres">
                               <span>65%</span>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="skill">
-                      <span>Proyect Management</span>
-                      <div class="bar-skill">
-                          <div class="progres">
-                              <span>94%</span>
                           </div>
                       </div>
                   </div>
@@ -248,7 +241,7 @@
           </div>
           <div class="proyecto">
            <a href="">
-            <img src="./images/p2.jpg" alt="">
+            <img src="./images/p2.webp" alt="">
            </a>
             <div class="overlay">
               <h3>Creative Designe</h3>
@@ -259,7 +252,7 @@
           </div>
           <div class="proyecto">
             <a href="">
-              <img src="./images/p3.jpg" alt="">
+              <img src="./images/p3.webp" alt="">
             </a>
             <div class="overlay">
               <h3>Creative Designe</h3>
@@ -270,7 +263,7 @@
           </div>
           <div class="proyecto">
            <a href="">
-            <img src="./images/p4.jpg" alt="">
+            <img src="./images/p4.webp" alt="">
            </a>
             <div class="overlay">
               <h3>Creative Designe</h3>
@@ -281,7 +274,7 @@
           </div>
           <div class="proyecto">
             <a href="">
-              <img src="./images/p5.jpg" alt="">
+              <img src="./images/p5.webp" alt="">
             </a>
             <div class="overlay">
               <h3>Creative Designe</h3>
@@ -292,7 +285,7 @@
           </div>
           <div class="proyecto">
            <a href="">
-            <img src="./images/p6.jpg" alt="">
+            <img src="./images/p6.webp" alt="">
            </a>
             <div class="overlay">
               <h3>Creative Designe</h3>
@@ -303,7 +296,7 @@
           </div>
           <div class="proyecto">
             <a href="">
-              <img src="./images/p6.jpg" alt="">
+              <img src="./images/p6.webp" alt="">
             </a>
             <div class="overlay">
               <h3>Creative Designe</h3>
@@ -317,23 +310,45 @@
       <div class="content-section">
         <h2>Contact</h2>
       </div>
-        <div class="row1">
           <div class="col1">
-            <input type="text" placeholder="Your name">
-            <input type="phone" placeholder="Phone Number">
-            <input type="email" placeholder="email">
-            <input type="text" placeholder="Topic">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Messagge"></textarea>
-            <button>
-              Send Messagge <i class="./images/contact_bg.png"></i>
-              <span class="overlay"></span>
-            </button>
+            <form method="get" action="thankyou.html" class="form" target="_blank">
+              <input type="text" placeholder="Your name" name="name">
+              <input type="tel" placeholder="Phone Number" name="phone">
+              <input type="email" placeholder="email" name="email">
+              <input type="text" placeholder="Topic" name="topic">
+              <textarea name="messagge" id="messagge" cols="30" rows="10" placeholder="messagge"></textarea>
+              <button>
+                Send Messagge <i class="./images/contact_bg.png"></i>
+                <span class="overlay"></span>
+              </button>
+            </form>
             
           </div>
+    </section>
+    <section class="weather-section">
+      <div class="weather-content">
+        <h1>Weather Finder</h1>
+        <div class="result">
+            <p>Add city and country</p>
+            
         </div>
+        <form action="#" method="POST" class="get-weather">
+            <input type="text" name="city" id="city" placeholder="Write your city...">
+            <select name="#" id="country">
+                <option disabled selected value="">Select the country</option>
+                <option value="AR">Argentina</option>
+                <option value="US">United States</option>
+                <option value="CL">Chile</option>
+                <option value="CO">Colombia</option>
+                <option value="CR">Costa Rica</option>
+                <option value="ES">España</option>
+                <option value="US">Estados Unidos</option>
+                <option value="MX">México</option>
+                <option value="PE">Perú</option>
+            </select>
+            <input type="submit" name="#"  value="Get Weather">
+        </form>
       </div>
-      
-
     </section>
     <footer>
       <a href="#home" class="up">
@@ -345,6 +360,8 @@
         <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
       </div>
+
+      <script src="./script.js" defer></script>
     </footer>
 
 
